@@ -58,10 +58,11 @@ public class StorageService {
 
     public Collection<Searchable> getAllSearchable() {
         Collection<Searchable> result = new ArrayList<>();
-
         result.addAll(products.values());
-
         result.addAll(articles.values());
         return result;
+    }
+    public Optional<Product> getProductById(UUID id) {
+        return Optional.ofNullable(products.get(id));
     }
 }
